@@ -12,8 +12,14 @@ st.title("Bike Sharing Analysis Dashboard")
 # Load Data
 @st.cache_data
 def load_data():
-    # Pastikan file main_data.csv satu folder dengan file ini
-    df = pd.read_csv("main_data.csv")
+    # Mengambil jalur folder tempat file dashboard.py berada
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    
+    # Menggabungkan jalur folder tadi dengan nama file
+    # Pastikan namanya "main_data.csv" atau "all_data.csv" (sesuaikan dengan isi foldermu!)
+    file_path = os.path.join(current_dir, "all_data.csv")
+    
+    df = pd.read_csv(file_path)
     df['dteday'] = pd.to_datetime(df['dteday'])
     return df
 
