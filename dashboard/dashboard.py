@@ -18,7 +18,7 @@ def load_data():
     
     # Menggabungkan jalur folder tadi dengan nama file
     # Pastikan namanya "main_data.csv" atau "all_data.csv" (sesuaikan dengan isi foldermu!)
-    file_path = os.path.join(current_dir, "all_data.csv")
+    file_path = os.path.join(current_dir, "main_data.csv")
     
     df = pd.read_csv(file_path)
     df['dteday'] = pd.to_datetime(df['dteday'])
